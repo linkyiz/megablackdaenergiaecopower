@@ -529,7 +529,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const suffix = el.getAttribute('data-suffix') || '';
         const currentVal = Math.round(easeOut * target);
 
-        el.textContent = `${prefix}${currentVal}${suffix}`;
+        const prefixHtml = prefix ? `<span class="stat-prefix">${prefix}</span>` : '';
+        const suffixHtml = suffix ? `<span class="stat-suffix">${suffix}</span>` : '';
+        el.innerHTML = `${prefixHtml}${currentVal}${suffixHtml}`;
       });
 
       if (progress < 1) {
@@ -539,7 +541,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const target = el.getAttribute('data-target');
           const prefix = el.getAttribute('data-prefix') || '';
           const suffix = el.getAttribute('data-suffix') || '';
-          el.textContent = `${prefix}${target}${suffix}`;
+          const prefixHtml = prefix ? `<span class="stat-prefix">${prefix}</span>` : '';
+          const suffixHtml = suffix ? `<span class="stat-suffix">${suffix}</span>` : '';
+          el.innerHTML = `${prefixHtml}${target}${suffixHtml}`;
         });
       }
     }

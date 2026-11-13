@@ -46,6 +46,9 @@ html {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
@@ -53,6 +56,8 @@ body {
   position: relative;
   background-color: var(--color-bg-base);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
 }
@@ -1013,6 +1018,23 @@ body {
   color: #ffffff;
   letter-spacing: -0.5px;
   text-shadow: 0 0 12px rgba(255, 115, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.7);
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.stat-prefix {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.85em;
+  margin-right: 1px;
+}
+
+.stat-suffix {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.88em;
+  margin-left: 2px;
 }
 
 .stat-label {
@@ -1406,6 +1428,7 @@ body {
 @media (max-width: 1080px) {
   .page-container {
     padding: 30px 20px;
+    gap: 40px;
   }
   
   .content-wrapper {
@@ -1416,20 +1439,23 @@ body {
   .bg-left-glow {
     width: 100vw;
     height: 65vh;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
+    background-position: top center;
+    background-size: cover;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
   }
 
   .hero-section {
     padding: 10px 0;
+    height: auto;
   }
 
   .ecopower-logo {
-    max-width: 260px;
+    max-width: 250px;
   }
 
   .seal-image {
-    max-width: 440px;
+    max-width: 420px;
   }
 
   .form-card {
@@ -1453,134 +1479,162 @@ body {
 
 @media (max-width: 640px) {
   .page-container {
-    padding: 20px 14px;
+    padding: 20px 14px 34px 14px;
+    gap: 32px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .bg-left-glow {
+    width: 100vw;
+    height: 55vh;
+    background-position: top center;
+    background-size: cover;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  }
+
+  .logo-container {
+    margin-bottom: 18px;
   }
 
   .ecopower-logo {
-    max-width: 210px;
+    max-width: 205px;
+  }
+
+  .seal-container {
+    margin-top: 4px;
+    margin-bottom: 22px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .seal-image {
-    max-width: 350px;
+    max-width: min(320px, 86vw);
+    width: 100%;
   }
 
   .hero-tagline {
-    font-size: 1.15rem;
-    margin-bottom: 24px;
+    font-size: 1.18rem;
+    line-height: 1.35;
+    margin-bottom: 22px;
+    padding: 0 6px;
   }
 
   .mobile-break {
     display: inline;
   }
 
-  /* Badges em mobile: 3 colunas compactas ou 1 coluna */
+  /* Badges em mobile com alturas iguais e centralização perfeita */
   .badges-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .badge-card {
-    padding: 12px 4px;
-    border-radius: 11px;
+    padding: 10px 4px;
+    border-radius: 12px;
+    min-height: 74px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .badge-val {
-    font-size: 1.1rem;
+    font-size: 1.12rem;
+    line-height: 1.1;
   }
 
   .badge-sub {
-    font-size: 0.68rem;
+    font-size: 0.70rem;
+    margin-top: 3px;
+    white-space: nowrap;
   }
 
   .badge-pre {
-    font-size: 0.65rem;
+    font-size: 0.64rem;
+    margin-bottom: 2px;
+    white-space: nowrap;
   }
 
   .badge-val-alt {
+    font-size: 0.98rem;
+  }
+
+  /* Contador de Propostas no Mobile */
+  .live-proposals-ticker {
+    padding: 8px 14px;
+    margin-top: 18px;
+    margin-bottom: 4px;
+    gap: 8px;
+    max-width: 100%;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .live-proposals-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
+  }
+
+  .live-proposals-text strong {
     font-size: 0.95rem;
+  }
+
+  .live-proposals-label {
+    font-size: 0.72rem;
+  }
+
+  .badges-disclaimer {
+    font-size: 0.72rem;
+    margin-top: 12px;
+    line-height: 1.4;
+    padding: 0 8px;
+    text-align: center;
+    max-width: 440px;
   }
 
   /* Formulário no Mobile */
   .form-card {
     padding: 24px 18px;
-    border-radius: 18px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 115, 0, 0.12);
   }
 
   .headline-title {
-    font-size: 1.6rem;
+    font-size: 1.65rem;
+    line-height: 1.25;
+    text-align: center;
   }
 
-  .type-selector {
-    gap: 10px;
-  }
-
-  .type-pill {
-    font-size: 0.82rem;
-    padding: 10px 12px;
-  }
-
-  /* Form grid no celular vira coluna única */
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
-
-  .split-row {
-    grid-template-columns: 80px 1fr;
-  }
-
-  .input-wrapper input {
-    padding: 12px 13px;
-    font-size: 0.9rem;
-  }
-
-  .slider-badge {
-    font-size: 1.1rem;
-  }
-
-  .slider-title {
-    font-size: 0.78rem;
-  }
-
-  .cta-glow-btn {
-    padding: 15px 18px;
-  }
-
-  .cta-text {
-    font-size: 0.95rem;
-  }
-
-  /* Rodapé Informativo no Mobile */
-  .stats-card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px 12px;
-    padding: 22px 16px;
-    border-radius: 18px;
-  }
-
-  .stat-divider {
-    display: none;
-  }
-
-  .stat-item:last-child {
-    grid-column: span 2;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .stat-number {
-    font-size: 1.45rem;
-  }
-
-  .stat-label {
-    font-size: 0.72rem;
-    white-space: normal;
+  .headline-sub {
+    font-size: 0.84rem;
+    text-align: center;
   }
 
   .live-raffle-card {
     padding: 12px 14px;
     margin-bottom: 18px;
+    border-radius: 14px;
+  }
+
+  .raffle-header-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 
   .raffle-badge-title {
@@ -1589,20 +1643,205 @@ body {
 
   .raffle-desc {
     font-size: 0.76rem;
+    line-height: 1.4;
   }
 
-  /* Contador de Propostas no Mobile */
-  .live-proposals-ticker {
-    padding: 8px 16px;
-    margin-top: 18px;
+  .type-selector {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .type-pill {
+    font-size: 0.82rem;
+    padding: 9px 12px;
+  }
+
+  /* Form grid no celular vira coluna única */
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  /* Ajuste preciso da linha UF & CPF para eliminar qualquer corte de texto */
+  .split-row {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 10px;
+  }
+
+  .uf-field input {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding: 12px 6px;
+    font-size: 0.9rem;
+  }
+
+  .doc-field input {
+    padding: 12px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Slider de Energia ajustado sem quebra de texto em 'R$ 900' */
+  .slider-container {
+    margin-bottom: 20px;
+  }
+
+  .slider-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .slider-title {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    flex: 1;
+  }
+
+  .slider-badge {
+    font-size: 1.18rem;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .slider-steps {
+    font-size: 0.70rem;
+    margin-top: 8px;
+  }
+
+  .cta-glow-btn {
+    padding: 16px 18px;
+  }
+
+  .cta-text {
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .cta-sub-incentive {
+    font-size: 0.72rem;
+    margin-top: 8px;
+    line-height: 1.35;
+    padding: 0 4px;
+    text-align: center;
+  }
+
+  /* Rodapé Informativo no Mobile */
+  .stats-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 12px;
+    padding: 22px 16px;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  .stat-number {
+    font-size: 1.48rem;
+    line-height: 1.1;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .stat-prefix {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.85em;
+    margin-right: 1px;
+  }
+
+  .stat-suffix {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.88em;
+    margin-left: 2px;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    margin-top: 4px;
+    line-height: 1.35;
+    white-space: normal;
+  }
+
+  .stat-item:last-child {
+    grid-column: span 2;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Telas ultra compactas (ex: 320px a 375px) */
+@media (max-width: 380px) {
+  .page-container {
+    padding: 16px 10px 28px 10px;
+    gap: 26px;
+  }
+
+  .seal-image {
+    max-width: 275px;
+  }
+
+  .badges-row {
+    gap: 6px;
+  }
+
+  .badge-card {
+    padding: 8px 2px;
+    min-height: 68px;
+  }
+
+  .badge-val {
+    font-size: 1rem;
+  }
+
+  .badge-sub, .badge-pre {
+    font-size: 0.62rem;
+  }
+
+  .split-row {
+    grid-template-columns: 78px 1fr;
     gap: 8px;
   }
 
-  .live-proposals-text strong {
-    font-size: 0.95rem;
+  .uf-field input {
+    font-size: 0.84rem;
+    padding: 11px 4px;
+  }
+
+  .doc-field input {
+    font-size: 0.84rem;
+    padding: 11px 8px;
+  }
+
+  .slider-badge {
+    font-size: 1.05rem;
+  }
+
+  .live-proposals-ticker {
+    padding: 6px 10px;
   }
 
   .live-proposals-label {
-    font-size: 0.74rem;
+    font-size: 0.68rem;
   }
 }
