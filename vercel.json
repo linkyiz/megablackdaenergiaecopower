@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "outputDirectory": ".",
   "cleanUrls": true,
   "headers": [
     {
@@ -43,4 +44,3 @@
     }
   ]
 }
-
