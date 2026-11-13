@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mega Black da Energia | EcoPower Energia Solar</title>
+
+  <!-- SEO & Metatags -->
+  <meta name="description"
+    content="Aproveite a Mega Black da Energia da EcoPower. Sua energia pode custar muito menos com até 30x sem juros, 90 dias de carência e financiamento facilitado!">
+  <meta name="theme-color" content="#ff7300">
+  <link rel="icon" type="image/png" href="logo_ecopower.png">
+
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mega Black da Energia | EcoPower Energia Solar">
+  <meta property="og:description"
+    content="Chegou a hora de economizar na sua conta de energia. Condições exclusivas de Black Friday!">
+  <meta property="og:image" content="selo_black.png">
+
+  <!-- Google Fonts: Montserrat & Michroma/Orbitron (estilo Eurostyle) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Orbitron:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- CDN Eurostile Extended fallback -->
+  <link href="https://fonts.cdnfonts.com/css/eurostile-extended" rel="stylesheet">
+
+  <!-- Estilos customizados -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Background Glow & Efeitos Ambientais -->
+  <div class="bg-wrapper">
+    <div class="bg-left-glow" aria-hidden="true"></div>
+    <div class="bg-particles" aria-hidden="true"></div>
+  </div>
+
+  <main class="page-container">
+    <div class="content-wrapper">
+
+      <!-- ==============================================
+           LADO ESQUERDO: Branding, Selo & Benefícios
+      =============================================== -->
+      <section class="hero-section">
+        
+        <div class="hero-top-content">
+          <!-- Logo EcoPower com Link para o Site Oficial -->
+          <header class="logo-container">
+            <a href="https://ecopower.com.br/" target="_blank" rel="noopener noreferrer" class="logo-link" title="EcoPower Energia Solar - Conheça o site oficial">
+              <img src="logo_ecopower.png" alt="EcoPower Energia Solar" class="ecopower-logo" width="340" height="90">
+            </a>
+          </header>
+
+          <!-- Selo Mega Black da Energia -->
+          <div class="seal-container">
+            <img src="selo_black.png" alt="Mega Black da Energia" class="seal-image" width="460" height="175">
+          </div>
+
+          <!-- Subtítulo de Impacto -->
+          <p class="hero-tagline">
+            Sua energia pode<br class="mobile-break"> <strong>custar muito menos!</strong>
+          </p>
+
+          <!-- Cards / Selos de Benefício Recriados com Brilho Neon Dinâmico -->
+          <div class="badges-row" id="badgesRow" role="region" aria-label="Condições especiais">
+
+            <!-- Badge 1: 30x sem juros -->
+            <div class="badge-card is-active-card" data-index="0">
+              <span class="badge-val">30x</span>
+              <span class="badge-sub">sem juros</span>
+            </div>
+
+            <!-- Badge 2: 90 dias carência -->
+            <div class="badge-card" data-index="1">
+              <span class="badge-val">90 dias</span>
+              <span class="badge-sub">dia de carência</span>
+            </div>
+
+            <!-- Badge 3: Financiamento facilitado -->
+            <div class="badge-card" data-index="2">
+              <span class="badge-pre">Financiamento</span>
+              <span class="badge-val">facilitado</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hero-bottom-content">
+          <!-- Contador Dinâmico de Propostas Enviadas na Live (Alinhado Horizontalmente com o Botão CTA) -->
+          <div class="live-proposals-ticker" role="status" aria-live="polite">
+            <span class="live-proposals-pulse" aria-hidden="true"></span>
+            <span class="live-proposals-text">
+              <strong id="proposalsCounter">30</strong>
+              <span class="live-proposals-label">propostas enviadas desde o início da live</span>
+            </span>
+          </div>
+
+          <!-- Aviso Legal / Análise de Crédito -->
+          <p class="badges-disclaimer">
+            *Condições comerciais válidas por tempo limitado, sujeitas a análise e aprovação de crédito e viabilidade técnica.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- ==============================================
+           LADO DIREITO: Formulário de Alta Conversão
+      =============================================== -->
+      <section class="form-section">
+        <div class="form-card">
+
+          <!-- Cabeçalho do Formulário -->
+          <div class="form-header">
+            <h1 class="headline-title">
+              Chegou a hora de
+              <span class="glow-text">economizar</span>
+            </h1>
+          </div>
+
+          <!-- Banner de Incentivo: Sorteio de Brindes na Live -->
+          <div class="live-raffle-card">
+            <div class="raffle-header-row">
+              <span class="live-tag">
+                <span class="live-dot-pulse"></span>
+                AO VIVO NA LIVE
+              </span>
+              <span class="raffle-badge-title">🎁 Sorteio de Brindes</span>
+            </div>
+            <p class="raffle-desc">
+              <strong>Concorra a brindes exclusivos na transmissão oficial!</strong> O sorteio será realizado entre os cadastrados desta página. Preencha seus dados abaixo para participar.
+            </p>
+          </div>
+
+          <!-- Seletor: Pessoa Física / Pessoa Jurídica -->
+          <div class="type-selector" role="radiogroup" aria-label="Tipo de pessoa">
+            <button type="button" class="type-pill active" id="btn-pf" data-type="PF" aria-checked="true" role="radio">
+              <span class="pill-dot"></span>
+              <span class="pill-label">Pessoa Física</span>
+            </button>
+            <button type="button" class="type-pill" id="btn-pj" data-type="PJ" aria-checked="false" role="radio">
+              <span class="pill-dot"></span>
+              <span class="pill-label">Pessoa Jurídica</span>
+            </button>
+          </div>
+
+          <!-- Formulário -->
+          <form id="leadForm" novalidate>
+
+            <div class="form-grid">
+
+              <!-- Nome Completo -->
+              <div class="input-field col-left">
+                <label for="nome" id="label-nome">Nome completo</label>
+                <div class="input-wrapper">
+                  <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required autocomplete="name">
+                </div>
+                <span class="field-error" id="error-nome"></span>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="input-field col-right">
+                <label for="whatsapp">WhatsApp</label>
+                <div class="input-wrapper">
+                  <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" maxlength="15" required
+                    autocomplete="tel">
+                </div>
+                <span class="field-error" id="error-whatsapp"></span>
+              </div>
+
+              <!-- Cidade -->
+              <div class="input-field col-left">
+                <label for="cidade">Cidade</label>
+                <div class="input-wrapper">
+                  <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" required
+                    autocomplete="address-level2">
+                </div>
+                <span class="field-error" id="error-cidade"></span>
+              </div>
+
+              <!-- Split: UF & Documento (CPF / CNPJ) -->
+              <div class="col-right split-row">
+
+                <!-- UF -->
+                <div class="input-field uf-field">
+                  <label for="uf">UF</label>
+                  <div class="input-wrapper">
+                    <input type="text" id="uf" name="uf" placeholder="Estado" maxlength="2" required
+                      autocomplete="address-level1">
+                  </div>
+                  <span class="field-error" id="error-uf"></span>
+                </div>
+
+                <!-- CPF ou CNPJ -->
+                <div class="input-field doc-field">
+                  <label for="documento" id="label-doc">CPF</label>
+                  <div class="input-wrapper">
+                    <input type="text" id="documento" name="documento" placeholder="000.000.000-00" maxlength="14"
+                      required>
+                  </div>
+                  <span class="field-error" id="error-documento"></span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Slider: Valor aproximado da conta de energia -->
+            <div class="slider-container">
+              <div class="slider-header">
+                <span class="slider-title">Valor aproximado da sua conta de energia</span>
+                <span class="slider-badge" id="sliderValueText">+ R$1.000</span>
+              </div>
+
+              <div class="slider-track-wrap">
+                <div class="slider-track-base"></div>
+                <div class="slider-progress" id="sliderProgress"></div>
+                <input type="range" id="energiaSlider" name="valor_energia" min="50" max="1000" step="50" value="1000"
+                  aria-label="Valor aproximado da conta de energia">
+              </div>
+
+              <div class="slider-steps">
+                <span>R$ 50</span>
+                <span>R$ 500</span>
+                <span>+ R$ 1.000</span>
+              </div>
+            </div>
+
+            <!-- Botão CTA com Efeito Brilho / Glow -->
+            <div class="submit-wrap">
+              <button type="submit" class="cta-glow-btn" id="submitBtn">
+                <span class="cta-shine"></span>
+                <span class="cta-text">QUERO MINHA CONDIÇÃO ESPECIAL</span>
+              </button>
+              <div class="cta-sub-incentive">
+                <span>🎁 Finalize seu cadastro para participar do sorteio na Live!</span>
+              </div>
+            </div>
+
+            <!-- Aviso de Privacidade e LGPD -->
+            <div class="privacy-wrap">
+              <button type="button" class="privacy-link" id="openPrivacyModal">
+                Aviso de privacidade e uso de dados.
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ==============================================
+         RODAPÉ INFORMATIVO: Números & Autoridade EcoPower
+    =============================================== -->
+    <footer class="stats-footer-section">
+      
+      <div class="stats-card">
+        
+        <!-- Stat 1: Projetos instalados -->
+        <div class="stat-item">
+          <span class="stat-number count-up" data-target="100" data-prefix="+" data-suffix=" mil">+0 mil</span>
+          <span class="stat-label">projetos instalados</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <!-- Stat 2: Franquias -->
+        <div class="stat-item">
+          <span class="stat-number count-up" data-target="300" data-prefix="+" data-suffix="">+0</span>
+          <span class="stat-label">franquias</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <!-- Stat 3: Carros de instalação -->
+        <div class="stat-item">
+          <span class="stat-number count-up" data-target="230" data-prefix="+" data-suffix="">+0</span>
+          <span class="stat-label">carros de instalação</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <!-- Stat 4: Veículos de entrega -->
+        <div class="stat-item">
+          <span class="stat-number count-up" data-target="60" data-prefix="+" data-suffix="">+0</span>
+          <span class="stat-label">veículos de entrega</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <!-- Stat 5: Operação própria -->
+        <div class="stat-item">
+          <span class="stat-number count-up" data-target="100" data-prefix="" data-suffix="%">0%</span>
+          <span class="stat-label">operação própria</span>
+        </div>
+
+      </div>
+
+      <!-- Assinatura Institucional -->
+      <div class="footer-legal-bar">
+        <p>© 2026 EcoPower Energia Solar • Líder em Geração Distribuída • Campanha Mega Black da Energia</p>
+      </div>
+
+    </footer>
+  </main>
+
+  <!-- ==============================================
+       MODAL: Aviso de Privacidade e LGPD
+  =============================================== -->
+  <div class="modal-backdrop" id="privacyModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="modalTitle">Aviso de Privacidade e Uso de Dados</h2>
+        <button type="button" class="modal-close-btn" id="closePrivacyModal" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>A <strong>EcoPower Energia Solar</strong> preza pela segurança, confidencialidade e privacidade dos seus
+          dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).</p>
+        <p><strong>Finalidade da Coleta:</strong> As informações solicitadas (Nome, WhatsApp, Cidade, UF, CPF/CNPJ e
+          faixa de consumo energético) serão utilizadas estritamente pela nossa equipe comercial para simular seu
+          dimensionamento solar, avaliar a viabilidade técnica e financeira (análise de crédito) e apresentar as opções da campanha <em>Mega Black da Energia</em>.</p>
+        <p><strong>Condições Comerciais:</strong> Os benefícios divulgados (como parcelamento em até 30x sem juros e carência de até 90 dias) constituem ofertas promocionais com condições sujeitas à análise cadastral e aprovação de crédito pelas instituições financeiras parceiras, bem como validação técnica da rede e local de instalação.</p>
+        <p><strong>Segurança:</strong> Seus dados não serão vendidos ou repassados a terceiros não autorizados. Você
+          pode solicitar a remoção ou atualização de suas informações a qualquer momento entrando em contato com nosso
+          atendimento oficial.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="modal-btn-confirm" id="confirmPrivacyModal">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

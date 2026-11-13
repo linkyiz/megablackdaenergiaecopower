@@ -1,0 +1,20 @@
+{
+  "name": "landingpage-mega-black-ecopower",
+  "version": "1.0.0",
+  "description": "Landing Page Oficial Mega Black da Energia - EcoPower Energia Solar",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Build concluído com sucesso para produção'"
+  },
+  "keywords": [
+    "ecopower",
+    "energia-solar",
+    "black-friday",
+    "mega-black",
+    "landing-page"
+  ],
+  "author": "EcoPower Energia Solar",
+  "license": "UNLICENSED"
+}
+
