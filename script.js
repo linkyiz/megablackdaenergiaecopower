@@ -5,7 +5,12 @@
  * ============================================================================
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+if (window.__ECOPOWER_SCRIPT_INITIALIZED__) {
+  // Script já inicializado, evita execução duplicada
+} else {
+  window.__ECOPOWER_SCRIPT_INITIALIZED__ = true;
+
+  document.addEventListener('DOMContentLoaded', () => {
   // Constantes
   const WHATSAPP_NUMBER = '5517996657199'; // +55 17 99665-7199
 
@@ -619,3 +624,4 @@ styleSheet.textContent = `
   }
 `;
 document.head.appendChild(styleSheet);
+}
