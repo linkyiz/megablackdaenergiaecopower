@@ -29,9 +29,438 @@
   <!-- CDN Eurostile Extended fallback -->
   <link href="https://fonts.cdnfonts.com/css/eurostile-extended" rel="stylesheet">
 
-  <!-- Estilos customizados (compatível na raiz e na pasta css/) -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Estilos customizados (compatível na raiz e na pasta css/ com cache buster) -->
+  <link rel="stylesheet" href="style.css?v=3.0">
+  <link rel="stylesheet" href="css/style.css?v=3.0">
+
+  <!-- Trava Anti-Estouro Mobile Universal (Inline para garantir aplicação imediata mesmo com cache de navegador) -->
+  <style id="mobile-universal-lock">
+    @media (max-width: 640px) {
+      html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .bg-wrapper {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .bg-left-glow {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-image: url('background-laranja.png') !important;
+        background-position: center top !important;
+        background-size: cover !important;
+        opacity: 0.90 !important;
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+      }
+      .page-container {
+        padding: 20px 14px 36px 14px !important;
+        gap: 26px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .content-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 26px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+      }
+      .hero-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .hero-top-content, .hero-bottom-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+      }
+      .logo-container {
+        margin-bottom: 14px !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+      }
+      .ecopower-logo {
+        max-width: min(200px, 58vw) !important;
+        height: auto !important;
+      }
+      .seal-container {
+        margin-top: 2px !important;
+        margin-bottom: 16px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+      }
+      .seal-image {
+        max-width: min(280px, 80vw) !important;
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
+      .hero-tagline {
+        font-size: clamp(1rem, 3.8vw, 1.22rem) !important;
+        line-height: 1.35 !important;
+        margin-bottom: 16px !important;
+        padding: 0 6px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+      }
+      .mobile-break {
+        display: inline !important;
+      }
+      .badges-row {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 6px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+      }
+      .badge-card {
+        min-width: 0 !important;
+        width: 100% !important;
+        padding: 8px 2px !important;
+        border-radius: 12px !important;
+        min-height: 68px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+      }
+      .badge-val {
+        font-size: clamp(0.85rem, 2.8vw, 1.10rem) !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+      }
+      .badge-sub {
+        font-size: clamp(0.52rem, 1.8vw, 0.65rem) !important;
+        margin-top: 2px !important;
+        white-space: nowrap !important;
+      }
+      .badge-pre {
+        font-size: clamp(0.48rem, 1.6vw, 0.60rem) !important;
+        margin-bottom: 2px !important;
+        white-space: nowrap !important;
+      }
+      .badge-card[data-index="2"] .badge-val {
+        font-size: clamp(0.72rem, 2.4vw, 0.88rem) !important;
+      }
+      .live-proposals-ticker {
+        padding: 7px 12px !important;
+        margin-top: 14px !important;
+        margin-bottom: 4px !important;
+        gap: 7px !important;
+        max-width: 100% !important;
+        width: fit-content !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+      }
+      .live-proposals-text strong {
+        font-size: 0.90rem !important;
+      }
+      .live-proposals-label {
+        font-size: clamp(0.64rem, 2.2vw, 0.70rem) !important;
+      }
+      .badges-disclaimer {
+        font-size: 0.68rem !important;
+        margin-top: 10px !important;
+        line-height: 1.4 !important;
+        padding: 0 8px !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .form-section, .form-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .form-card {
+        padding: 20px 14px !important;
+        border-radius: 18px !important;
+        margin: 0 auto !important;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85), 0 0 25px rgba(255, 115, 0, 0.12) !important;
+      }
+      .form-header {
+        margin-bottom: 14px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .headline-title {
+        font-size: clamp(1.25rem, 4.8vw, 1.55rem) !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+        padding: 0 4px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .live-raffle-card {
+        padding: 10px 11px !important;
+        margin-bottom: 14px !important;
+        border-radius: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .raffle-header-row {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-wrap: wrap !important;
+        margin-bottom: 5px !important;
+      }
+      .raffle-badge-title {
+        font-size: clamp(0.70rem, 2.5vw, 0.78rem) !important;
+      }
+      .raffle-desc {
+        font-size: clamp(0.68rem, 2.4vw, 0.74rem) !important;
+        line-height: 1.4 !important;
+      }
+      .type-selector {
+        display: flex !important;
+        gap: 8px !important;
+        margin-bottom: 14px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .type-pill {
+        flex: 1 !important;
+        min-width: 0 !important;
+        max-width: 50% !important;
+        font-size: clamp(0.72rem, 2.5vw, 0.84rem) !important;
+        padding: 9px 4px !important;
+        gap: 5px !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+        justify-content: center !important;
+      }
+      .form-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 11px !important;
+        margin-bottom: 14px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .input-field, .input-wrapper, .input-wrapper input {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .split-row {
+        display: grid !important;
+        grid-template-columns: 74px minmax(0, 1fr) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .uf-field, .doc-field {
+        min-width: 0 !important;
+      }
+      .uf-field input {
+        text-align: center !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        font-weight: 700 !important;
+        padding: 11px 4px !important;
+        font-size: 0.86rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .doc-field input {
+        padding: 11px 10px !important;
+        font-size: 0.86rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .slider-container {
+        margin-bottom: 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .slider-header {
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+        margin-bottom: 8px !important;
+        width: 100% !important;
+      }
+      .slider-title {
+        font-size: clamp(0.70rem, 2.4vw, 0.78rem) !important;
+        line-height: 1.35 !important;
+        flex: 1 !important;
+        min-width: 0 !important;
+      }
+      .slider-badge {
+        font-size: clamp(0.95rem, 3.4vw, 1.15rem) !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+      }
+      .slider-steps {
+        font-size: 0.66rem !important;
+        margin-top: 6px !important;
+        width: 100% !important;
+      }
+      .submit-wrap {
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .cta-glow-btn {
+        width: 100% !important;
+        padding: 14px 12px !important;
+        box-sizing: border-box !important;
+      }
+      .cta-text {
+        font-size: clamp(0.80rem, 2.8vw, 0.95rem) !important;
+        line-height: 1.25 !important;
+      }
+      .cta-sub-incentive {
+        font-size: 0.68rem !important;
+        margin-top: 8px !important;
+        line-height: 1.35 !important;
+        padding: 0 4px !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        word-break: break-word !important;
+      }
+      .cta-sub-incentive span {
+        display: inline-block !important;
+        max-width: 100% !important;
+      }
+      .privacy-wrap {
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .stats-footer-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+      }
+      .stats-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px 8px !important;
+        padding: 20px 12px !important;
+        border-radius: 18px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .stat-divider {
+        display: none !important;
+      }
+      .stat-item {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        padding: 0 2px !important;
+        box-sizing: border-box !important;
+      }
+      .stat-number {
+        font-size: clamp(1.20rem, 4.2vw, 1.45rem) !important;
+        line-height: 1.1 !important;
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+      }
+      .stat-prefix, .stat-suffix {
+        font-family: var(--font-body) !important;
+        font-weight: 800 !important;
+      }
+      .stat-label {
+        font-size: clamp(0.64rem, 2.2vw, 0.70rem) !important;
+        margin-top: 3px !important;
+        line-height: 1.35 !important;
+        white-space: normal !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 3px auto 0 auto !important;
+      }
+      .stat-item:last-child {
+        grid-column: span 2 !important;
+        padding-top: 10px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+      }
+      .footer-legal-bar {
+        width: 100% !important;
+        text-align: center !important;
+        margin-top: 12px !important;
+      }
+      .footer-legal-bar p {
+        font-size: 0.68rem !important;
+        line-height: 1.45 !important;
+        padding: 0 8px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -338,9 +767,9 @@
     </div>
   </div>
 
-  <!-- Scripts (compatível na raiz e na pasta js/) -->
-  <script src="script.js" defer></script>
-  <script src="js/script.js" defer></script>
+  <!-- Scripts (compatível na raiz e na pasta js/ com cache buster) -->
+  <script src="script.js?v=3.0" defer></script>
+  <script src="js/script.js?v=3.0" defer></script>
 </body>
 
 </html>
